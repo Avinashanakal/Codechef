@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int x,y,z,val,count=0;
+    cin>>x>>y>>z;
+    map<int,int> voter;
+    vector<int> ans;
+    for(int i=0;i<x+y+z;i++){
+        cin>>val;
+        voter[val]+=1;
+    }
+    for(pair<int,int> i : voter){
+        if(i.second>=2){
+            ans.push_back(i.first);
+        }
+    }
+    cout<<ans.size()<<"\n";
+    for(int i : ans){
+        cout<<i<<"\n";
+    }
+
+    return 0;
+}
