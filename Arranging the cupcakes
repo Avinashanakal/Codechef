@@ -1,0 +1,23 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t,n;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        int max=INT_MAX;
+        for(int i=1;i*i<=n;i++){
+            if(n%i==0){
+                int rem=n/i;
+                int dif=abs(rem-i);
+                if(dif<max){
+                    max=dif;
+                }
+            }
+        }
+        cout<<max<<endl;
+    }
+	return 0;
+}
