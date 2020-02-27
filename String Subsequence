@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string st1, st2;
+        cin>>st1>>st2;
+        int i=0,j=0;
+
+        if(st1.length() > st2.length())
+            swap(st1, st2);
+
+        while(i<st1.length() and j<st2.length())
+        {
+            if(st1[i] == st2[j])
+                i++,j++;
+            else
+                j++;
+        }
+
+        if(i== st1.length())
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;   
+    }
+}
