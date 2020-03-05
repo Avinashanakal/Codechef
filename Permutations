@@ -1,0 +1,43 @@
+#include<bits/stdc++.h> 
+using namespace std;
+
+int main()
+{
+int n;
+cin>>n;
+int arr[n+1];
+bool visited[n+1];
+for(int i=1;i<=n;i++)
+{cin>>arr[i];
+ visited[i]=0;	
+}
+int i=1;
+int count=0;
+vector<vector<int>> res(n);
+while(i<=n)
+{
+	vector<int> v;
+	int j=i;
+	while(!visited[arr[j]])
+	{
+		visited[arr[j]]=1;
+		v.push_back(j);
+		j=arr[j];
+	}
+	if(!v.empty())
+	{
+		v.push_back(v[0]);
+		res[count++]=v;
+	}
+	i++;
+	
+}
+cout<<count<<endl;
+for(int j=0;j<count;j++)
+{
+	int size=res[j].size();
+	for(int k=0;k<size;k++)
+	cout<<res[j][k]<<" ";
+	cout<<endl;
+}return 0;
+}
