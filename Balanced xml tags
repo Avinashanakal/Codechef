@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define lli long long int 
+using namespace std;
+
+int main() {
+	lli t;
+	cin>>t;
+	
+	while(t--){
+	    string str;
+	    stack<lli>st;
+	    lli ans=0;
+	    cin>>str;
+	     lli n=str.length();
+	    for(lli i=0;i<n;i++){
+	    if(st.empty())
+	        ans=i;
+	    if(str[i]=='>'){
+	        if(st.empty()){
+	            st.push(1);
+	            break;
+	        }
+	        else
+	            st.pop();
+	    }
+	    else{
+	        st.push(1);
+	    }
+	}
+	if(st.empty()){
+	    ans=n;
+	}
+	cout<<ans<<endl;
+	}
+	return 0;
+}
