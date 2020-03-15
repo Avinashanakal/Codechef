@@ -1,0 +1,57 @@
+-----------------------1st solution-----------------------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	   	cin>>n;
+		long long int a[n],sum[n],ma=0;
+		for(int i=0;i<n;i++)
+		{
+			cin>>a[i];
+			sum[i]=a[i]+i;
+			ma=max(ma,sum[i]);
+		}
+		cout<<ma<<endl;
+	}
+	return 0;
+}
+
+-----------------------2nd solution-----------------------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	   int arr[n];
+	    for(int i=0;i<n;++i){
+	        cin>>arr[i];
+	    }
+	    //int max=*max_element(arr,arr+n);
+	    int max=arr[0];
+	    int i,pos;
+	    for(i=1;i<n;i++){
+	        if(arr[i]>max){
+	        max=arr[i];
+	        pos=i;
+	        }
+	    }
+	    int ans=pos+max;
+	    cout<<ans<<endl;
+	}
+	return 0;
+}
+---------------------Python Solution---------------------
+for _ in range(int(input())):
+    N = int(input())
+    array = list(map(int,input().split()))
+    for i in range (N):
+        array[i] += i
+    print(max(array))
