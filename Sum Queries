@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    long long n,m,q,as;
+    cin >> n;
+    cin >> m;
+    while(m--){
+        cin >> q;
+        
+        long l = max(q-n,n+1);
+        long r = min(q-1,2*n);
+        if(l>r){
+           as = 0; 
+        }
+        else{
+                as = r-l+1;
+            }
+            
+        
+        cout << as << endl;
+    }
+    return 0;
+}
