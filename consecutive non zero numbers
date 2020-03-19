@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;++i){
+	    cin>>arr[i];
+	}
+	int c=0,max=0;
+	for(int i=0;i<n;++i){
+	   if(arr[i]!=0){
+	       c++;
+	   }
+	   if(c>max)
+	   max=c;
+	   
+	   if(arr[i]==0)
+	   c=0;
+	}
+	cout<<max<<endl;
+	return 0;
+}
+-------------------------Python solution-----------------------
+try:
+    N=int(input())
+    A=list(map(int,input().split(' ')))
+    
+    l=[]
+    l1=0
+    for i in range(N):
+        if A[i]==0:
+            l.append(l1)
+            l1=0
+        else:
+            l1+=1
+    l.append(l1)
+    print(max(l))
+except:
+    pass
