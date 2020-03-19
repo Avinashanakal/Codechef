@@ -16,3 +16,12 @@ int main() {
 	}
 	return 0;
 }
+----------------------------Pyhton solution---------------------------------
+for _ in range(int(input())):
+    sm=0
+    num="1234567890"
+    s=input()
+    for i in s:
+        if i in num:
+            sm+=int(i)
+    print(sm)
