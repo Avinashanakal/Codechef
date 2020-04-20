@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	long long int ans=0;
+	while(t--){
+	    int n,q;
+	    cin>>n>>q;
+	    int last_floor=0;
+	    while(q--){
+	        int s,d;
+	        cin>>s>>d;
+	        ans+=abs(last_floor-s)+abs(s-d);
+	        last_floor=d;
+	    }
+	}
+	cout<<ans<<endl;
+	return 0;
+}
