@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long int mod=1000000007;
+
+long long int fast_pow(long long int base,long long int power) 
+{
+    long long int result=1;
+    
+    while(power>0)
+    {
+        if(power%2==1)
+            result=(result*base)%mod;
+        base=(base*base)%mod;
+        power=power/2;
+    }
+    return result;
+}
+int main() {
+	long long int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long int n,a,p,ans=0;
+	    cin>>n>>a;
+
+	    for(long long int i=1;i<=n;i++)
+	    {
+	        p=(fast_pow(a,(2*i-1)))%mod;
+	        a=(a*p)%mod;
+	        ans=(ans+p)%mod;
+	    }
+
+	    cout<<ans<<endl;
+
+	}
+
+	return 0;
+}
