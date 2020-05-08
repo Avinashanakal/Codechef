@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,z;
+	    cin>>n>>z;
+	    int ans=0;
+	    priority_queue<int>pq;
+	    for(int i=0;i<n;++i){
+	        int temp;
+	        cin>>temp;
+	        pq.push(temp);
+	    }
+	    while(z>0 && pq.top()>0){
+	        int attack=pq.top();
+	        z-=attack;
+	        pq.pop();
+	        pq.push(attack/2);
+	        ans++;
+	    }
+	    if(z>0)
+	    cout<<"Evacuate"<<endl;
+	    else
+	    cout<<ans<<endl;
+	}
+	return 0;
+}
