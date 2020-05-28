@@ -1,0 +1,52 @@
+----------------------------------Using Sets(TLE)-------------------------------------------------
+#include <bits/stdc++.h>
+#define lli long long int
+using namespace std;
+
+int main() {
+   int t;
+   cin>>t;
+   while(t--){
+       int n;
+       cin>>n;
+       int arr[n];
+       for(int i=0;i<n;++i){
+           cin>>arr[i];
+       }
+       set<int>s1;
+       set<int>s2;
+       int freq=1, flag=0;
+       for(int i=0;i<n;++i){
+           if(arr[i]==arr[i+1])
+           freq++;
+           else{
+               if(s1.find(freq)==s1.end() && s2.find(arr[i])==s2.end()){
+                   s2.insert(arr[i]);//1
+                   s1.insert(freq); //2
+                   freq=1;
+               }
+               else{
+                   flag=1;
+                   break;
+               }
+           }
+       }
+
+       if(flag==1){
+           cout<<"NO\n";
+       }
+       else{
+           cout<<"YES\n";
+       }
+       /*
+       for(int x:s1){
+           cout<<x<<"s1"<<endl; //1--4,2---1,3---2
+       }
+       
+       for(int y:s2){
+           cout<<y<<"s2"<<endl; // 1,2,4
+       }*/
+   }
+	return 0;
+}
+------------------------------------------Using Maps-------------------------------
