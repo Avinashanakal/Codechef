@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define lli long long int
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        string str;
+        cin>>str;
+        int p=0;
+        for(int i=0;i<str.length();++i){
+            if(str[i]=='x' && str[i+1]=='y'){
+                    p++;
+                    i++;
+                }
+                else if(str[i]=='y' && str[i+1]=='x'){
+                    p++;
+                    i++;
+                }
+            }
+            cout<<p<<"\n";
+    }
+	return 0;
+}
